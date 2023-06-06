@@ -1,0 +1,11 @@
+---
+
+# configure sshd options
+
+- name: copy changed sshd config options file
+  copy:
+    src: "files/sshd-options-file"
+    dest: "/etc/ssh/sshd_config.d/00-{{ ansible_distribution }}.conf"
+  notify: restart sshd
+
+# EOF
