@@ -1,0 +1,9 @@
+---
+
+# disable selinux
+
+- name: disable selinux
+  ansible.posix.selinux:
+    state: disabled
+
+# EOF
