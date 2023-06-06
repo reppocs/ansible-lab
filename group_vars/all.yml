@@ -1,0 +1,5 @@
+dns_server: 192.168.1.116
+
+nfs_server: 192.168.1.5
+nfs_home_mount: "/volume2/homedir"
+nfs_plex_mount: "/volume1/plex"
