@@ -8,4 +8,10 @@
     state: reloaded
   listen: "reload firewalld"
 
+- name: restart sshd
+  service:
+    name: firewalld
+    state: restarted
+  listen: "restart sshd"
+
 # EOF
