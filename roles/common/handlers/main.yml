@@ -1,0 +1,11 @@
+---
+
+# handlers file for common
+
+- name: reload firewalld
+  service:
+    name: firewalld
+    state: reloaded
+  listen: "reload firewalld"
+
+# EOF
