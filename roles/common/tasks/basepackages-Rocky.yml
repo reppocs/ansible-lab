@@ -1,6 +1,7 @@
 ---
 
 - name: install base packages
+  become: yes
   block:
 
     - name: epel-release
