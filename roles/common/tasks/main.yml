@@ -11,4 +11,9 @@
     file: "basepackages-{{ ansible_distribution }}.yml"
   tags: baseinstall
 
+- name: include ssh task
+  include_tasks:
+    file: "ssh.yml"
+  tags: baseinstall
+
 # EOF
