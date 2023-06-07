@@ -16,4 +16,9 @@
     file: "ssh.yml"
   tags: baseinstall
 
+- name: include firewall task
+  include_tasks:
+    file: "firewall-{{ ansible_distribution }}.yml"
+  tags: baseinstall
+
 # EOF
