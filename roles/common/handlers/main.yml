@@ -3,12 +3,14 @@
 # handlers file for common
 
 - name: reload firewalld
+  become: yes
   service:
     name: firewalld
     state: reloaded
   listen: "reload firewalld"
 
 - name: restart sshd
+  become: yes
   service:
     name: sshd
     state: restarted
