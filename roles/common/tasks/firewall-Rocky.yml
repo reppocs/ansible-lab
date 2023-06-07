@@ -1,41 +1,47 @@
 ---
 
-# set up firewalld in rocky
+- name: set up firewalld in rocky
+  become: yes
+  block:
 
-- name: remove services from public zone
-  firewalld:
-    service: "{{ item }}"
-    zone: public
-    permanent: true
-    state: disabled
-  loop:
-    - cockpit
-    - dhcpv6-client
+    - name: remove services from public zone
+      firewalld:
+        zone: public
+        service: "{{ item }}"
+        permanent: true
+        state: disabled
+      notify: reload firewalld
+      with_items:
+        - cockpit
+        - dhcpv6-client
 
-- name: add local subnet source to internal zone
-  firewalld:
-    source: 192.168.1.0/24
-    zone: internal
-    permanent: true
-    state: enabled
+    - name: add local subnet source to internal zone
+      firewalld:
+        zone: internal
+        source: 192.168.1.0/24
+        permanent: true
+        state: enabled
+      notify: reload firewalld
 
-- name: add services to internal zone
-  firewalld:
-    service: "{{ item }}"
-    zone: internal
-    permanent: true
-    state: enabled
-  loop:
-    - cockpit
-    - ssh
-  notify: reload firewalld
+    - name: add services to internal zone
+      firewalld:
+        zone: internal
+        service: "{{ item }}"
+        permanent: true
+        state: enabled
+      notify: reload firewalld
+      with_items:
+        - cockpit
+        - ssh
 
-- name: remove ssh service from public zone
-  firewalld:
-    service: "{{ item }}"
-    zone: internal
-    permanent: true
-    state: disabled
-  notify: reload firewalld
+    - name: remove ssh service from public zone
+      firewalld:
+        zone: internal
+        service: ssh
+        permanent: true
+        state: disabled
+      notify: reload firewalld
+
+# end of firewalld block
 
 # EOF
