@@ -1,6 +1,7 @@
 ---
 
     - name: upgrade all packages
+      become: yes
       dnf:
         name: "*"
         state: latest
