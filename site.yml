@@ -2,7 +2,7 @@
 
 - hosts: all
 
-  pre-tasks:
+  pre_tasks:
 
     - name: verify if distro is supported
       fail:
