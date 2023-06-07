@@ -1,7 +1,6 @@
-hosts:
+---
 
-  virtual:
+virtual:
+  hosts:
     rockyclone:
       ansible_host: 192.168.1.170
-
-[physical]
