@@ -10,7 +10,7 @@
 
 - name: restart sshd
   service:
-    name: firewalld
+    name: sshd
     state: restarted
   listen: "restart sshd"
 
