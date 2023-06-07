@@ -18,7 +18,6 @@
           - cockpit-pcp
           - curl
           - dnf-automatic
-          - fail2ban-all
           - htop
           - iproute
           - logrotate
