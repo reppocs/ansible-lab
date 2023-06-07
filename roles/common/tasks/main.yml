@@ -6,4 +6,9 @@
     file: "update-{{ ansible_distribution }}.yml"
   tags: upgrade
 
+- name: include install base packages task
+  include_tasks:
+    file: "basepackages-{{ ansible_distribution }}.yml"
+  tags: baseinstall
+
 # EOF
