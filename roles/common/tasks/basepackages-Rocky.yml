@@ -9,7 +9,7 @@
         name: epel-release
         state: latest
 
-    - name: common packages
+    - name: base required packages
       dnf:
         name:
           - bind-utils
