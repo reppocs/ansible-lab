@@ -3,7 +3,16 @@
 # disable selinux
 
 - name: disable selinux
-  ansible.posix.selinux:
-    state: disabled
+  become: yes
+  block:
+
+    - name: disable selinux
+      ansible.posix.selinux:
+        state: disabled
+
+    - name: reboot host
+      reboot:
+
+# end of disable selinux block
 
 # EOF
