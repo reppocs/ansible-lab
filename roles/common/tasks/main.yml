@@ -11,6 +11,11 @@
     file: "basepackages-{{ ansible_distribution }}.yml"
   tags: baseinstall
 
+- name: include selinux task
+  include_tasks:
+    file: "selinux.yml"
+  when: ansible_distribution == "Rocky"
+
 - name: include ssh task
   include_tasks:
     file: "ssh.yml"
