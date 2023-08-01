@@ -1,1 +1,2 @@
 PermitRootLogin no
+PasswordAuthentication no
