@@ -44,7 +44,8 @@
   ansible.builtin.include_tasks:
     file: "firewall-{{ ansible_distribution }}.yml"
     apply:
-      - install
+      tags:
+        - install
   tags:
     - install
   when: ansible_distribution == "Rocky"
