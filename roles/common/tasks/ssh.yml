@@ -4,7 +4,7 @@
 
 - name: copy changed sshd config options file
   become: yes
-  copy:
+  ansible.builtin.copy:
     src: files/sshd-options-file
     dest: "/etc/ssh/sshd_config.d/99-local-sshd.conf"
   notify: restart sshd
