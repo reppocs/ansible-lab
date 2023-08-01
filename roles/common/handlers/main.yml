@@ -4,14 +4,14 @@
 
 - name: reload firewalld
   become: yes
-  service:
+  ansible.builtin.service:
     name: firewalld
     state: reloaded
   listen: "reload firewalld"
 
 - name: restart sshd
   become: yes
-  service:
+  ansible.builtin.service:
     name: sshd
     state: restarted
   listen: "restart sshd"
