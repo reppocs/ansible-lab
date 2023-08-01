@@ -1,0 +1,29 @@
+---
+
+- name: install base packages
+  become: yes
+  block:
+
+    - name: base required packages
+      ansible.builtin.apt:
+        name:
+          - bzip2
+          - curl
+          - htop
+          - logrotate
+          - logwatch
+          - net-tools
+          - nfs-common
+          - rkhunter
+          - rsync
+          - rsyslog
+          - screen
+          - tar
+          - vim
+          - wget
+        state: latest
+        update_cache: yes
+
+# end of base packages block
+
+# EOF
