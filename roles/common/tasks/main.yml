@@ -21,15 +21,15 @@
   tags:
     - install
 
-- name: include selinux task
-  ansible.builtin.include_tasks:
-    file: "selinux.yml"
-    apply:
-      tags:
-        - install
-  tags:
-    - install
-  when: ansible_distribution == "Rocky"
+#- name: include selinux task
+#  ansible.builtin.include_tasks:
+#    file: "selinux.yml"
+#    apply:
+#      tags:
+#        - install
+#  tags:
+#    - install
+#  when: ansible_distribution == "Rocky"
 
 - name: include ssh task
   ansible.builtin.include_tasks:
