@@ -2,7 +2,7 @@
 
     - name: upgrade all packages
       become: yes
-      apt:
+      ansible.builtin.apt:
         name: "*"
         state: latest
         update_cache: yes
