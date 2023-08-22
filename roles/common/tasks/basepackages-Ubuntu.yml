@@ -4,6 +4,13 @@
   become: yes
   block:
 
+    - name: install qemu agent (if virtual)
+      ansible.builtin.apt:
+        name: qemu-guest-agent
+        state: latest
+        update_cache: yes
+      when: ansible_virtualization_role == "guest"
+
     - name: base required packages
       ansible.builtin.apt:
         name:
