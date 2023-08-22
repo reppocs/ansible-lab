@@ -48,6 +48,5 @@
         - install
   tags:
     - install
-  when: ansible_distribution == "Rocky"
 
 # EOF

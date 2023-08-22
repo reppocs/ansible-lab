@@ -1,0 +1,22 @@
+---
+
+- name: configure ufw
+  become: yes
+  block:
+
+    - name: allow ssh
+      community.general.ufw:
+        rule: allow
+        name: OpenSSH
+
+    - name: enable ufw
+      community.general.ufw:
+        state: enabled
+
+    - name: deny everything by default
+      community.general.ufw:
+        default: deny
+
+# end of ufw block
+
+# EOF
