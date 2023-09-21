@@ -34,6 +34,7 @@
           - vim
           - wget
           - yum-utils
+          - zip
         state: latest
 
 # end of base packages block
