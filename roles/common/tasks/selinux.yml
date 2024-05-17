@@ -3,7 +3,7 @@
 # disable selinux
 
 - name: disable selinux
-  become: yes
+  become: true
   block:
 
     - name: disable selinux

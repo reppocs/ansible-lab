@@ -1,7 +1,7 @@
 ---
 
 - name: install base packages
-  become: yes
+  become: true
   block:
 
     - name: install qemu agent (if virtual)
