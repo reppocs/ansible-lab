@@ -5,7 +5,7 @@
   block:
 
     - name: remove services from public zone
-      firewalld:
+      ansible.posix.firewalld:
         zone: public
         service: "{{ item }}"
         permanent: true
@@ -16,7 +16,7 @@
         - dhcpv6-client
 
     - name: add local subnet source to internal zone
-      firewalld:
+      ansible.posix.firewalld:
         zone: internal
         source: 192.168.1.0/24
         permanent: true
@@ -24,7 +24,7 @@
       notify: reload firewalld
 
     - name: add services to internal zone
-      firewalld:
+      ansible.posix.firewalld:
         zone: internal
         service: "{{ item }}"
         permanent: true
@@ -35,7 +35,7 @@
         - ssh
 
     - name: remove ssh service from public zone
-      firewalld:
+      ansible.posix.firewalld:
         zone: public
         service: ssh
         permanent: true

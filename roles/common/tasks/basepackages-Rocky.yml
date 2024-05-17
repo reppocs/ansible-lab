@@ -5,12 +5,12 @@
   block:
 
     - name: epel-release
-      dnf:
+      ansible.builtin.dnf:
         name: epel-release
         state: latest
 
     - name: base required packages
-      dnf:
+      ansible.builtin.dnf:
         name:
           - bind-utils
           - bzip2
