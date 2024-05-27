@@ -1,15 +1,15 @@
 ---
 
-- name: install base packages
+- name: Install base packages
   become: true
   block:
 
-    - name: epel-release
+    - name: Install epel-release repo
       ansible.builtin.dnf:
         name: epel-release
-        state: latest
+        state: present
 
-    - name: base required packages
+    - name: Install base required packages
       ansible.builtin.dnf:
         name:
           - bind-utils
@@ -35,7 +35,7 @@
           - wget
           - yum-utils
           - zip
-        state: latest
+        state: present
 
 # end of base packages block
 
