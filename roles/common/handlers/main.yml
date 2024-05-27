@@ -2,14 +2,14 @@
 
 # handlers file for common
 
-- name: reload firewalld
+- name: Reload firewalld
   become: true
   ansible.builtin.service:
     name: firewalld
     state: reloaded
   listen: "reload firewalld"
 
-- name: restart sshd
+- name: Restart sshd
   become: true
   ansible.builtin.service:
     name: sshd
