@@ -10,8 +10,8 @@
       ansible.posix.selinux:
         state: disabled
 
-    - name: reboot host
-      reboot:
+    - name: Reboot host
+      ansible.builtin.reboot:
 
 # end of disable selinux block
 
