@@ -7,6 +7,9 @@
   ansible.builtin.copy:
     src: files/sshd-options-file
     dest: "/etc/ssh/sshd_config.d/99-local-sshd.conf"
+    owner: root
+    group: root
+    mode: '0600'
   notify: restart sshd
 
 # EOF
