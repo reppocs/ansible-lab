@@ -1,6 +1,9 @@
+---
+
 # all the things
 
-- hosts: all
+- name: Configure my home lab systems
+  hosts: all
 
   pre_tasks:
 
