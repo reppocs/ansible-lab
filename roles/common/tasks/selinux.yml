@@ -2,11 +2,11 @@
 
 # disable selinux
 
-- name: disable selinux
+- name: Disable selinux
   become: true
   block:
 
-    - name: disable selinux
+    - name: Set selinux to disabled
       ansible.posix.selinux:
         state: disabled
 

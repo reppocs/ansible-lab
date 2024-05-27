@@ -1,7 +1,7 @@
 ---
 # tasks file for common
 
-- name: include upgrade all packages task
+- name: Include upgrade all packages task
   ansible.builtin.include_tasks:
     file: "update-{{ ansible_distribution }}.yml"
     apply:
@@ -12,7 +12,7 @@
     - upgrade
     - install
 
-- name: include install base packages task
+- name: Include install base packages task
   ansible.builtin.include_tasks:
     file: "basepackages-{{ ansible_distribution }}.yml"
     apply:
@@ -31,7 +31,7 @@
 #    - install
 #  when: ansible_distribution == "Rocky"
 
-- name: include ssh task
+- name: Include ssh task
   ansible.builtin.include_tasks:
     file: "ssh.yml"
     apply:
@@ -40,7 +40,7 @@
   tags:
     - install
 
-- name: include firewall task
+- name: Include firewall task
   ansible.builtin.include_tasks:
     file: "firewall-{{ ansible_distribution }}.yml"
     apply:

@@ -2,7 +2,7 @@
 
 # configure sshd options
 
-- name: copy changed sshd config options file
+- name: Copy changed sshd config options file
   become: true
   ansible.builtin.copy:
     src: files/sshd-options-file

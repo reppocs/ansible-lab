@@ -1,10 +1,10 @@
 ---
 
-- name: set up firewalld in rocky
+- name: Set up firewalld in rocky
   become: true
   block:
 
-    - name: remove services from public zone
+    - name: Remove services from public zone
       ansible.posix.firewalld:
         zone: public
         service: "{{ item }}"
@@ -15,7 +15,7 @@
         - cockpit
         - dhcpv6-client
 
-    - name: add local subnet source to internal zone
+    - name: Add local subnet source to internal zone
       ansible.posix.firewalld:
         zone: internal
         source: 192.168.1.0/24
@@ -23,7 +23,7 @@
         state: enabled
       notify: reload firewalld
 
-    - name: add services to internal zone
+    - name: Add services to internal zone
       ansible.posix.firewalld:
         zone: internal
         service: "{{ item }}"
@@ -34,7 +34,7 @@
         - cockpit
         - ssh
 
-    - name: remove ssh service from public zone
+    - name: Remove ssh service from public zone
       ansible.posix.firewalld:
         zone: public
         service: ssh

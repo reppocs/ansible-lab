@@ -1,17 +1,17 @@
 ---
 
-- name: install base packages
+- name: Install base packages
   become: true
   block:
 
-    - name: install qemu agent (if virtual)
+    - name: Install qemu agent (if virtual)
       ansible.builtin.apt:
         name: qemu-guest-agent
-        state: latest
-        update_cache: yes
+        state: present
+        update_cache: true
       when: ansible_virtualization_role == "guest"
 
-    - name: base required packages
+    - name: Install base required packages
       ansible.builtin.apt:
         name:
           - bzip2
@@ -28,8 +28,8 @@
           - tar
           - vim
           - wget
-        state: latest
-        update_cache: yes
+        state: present
+        update_cache: true
 
 # end of base packages block
 
