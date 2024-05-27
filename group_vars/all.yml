@@ -1,4 +1,5 @@
-dns_server: 192.168.1.100
+dns_server_primary: 192.168.1.100
+dns_server_secondary: 9.9.9.9
 
 nfs_server: 192.168.1.5
 nfs_home_mount: "/volume2/homedir"
