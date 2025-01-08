@@ -3,7 +3,7 @@
 
 - name: Include upgrade all packages task
   ansible.builtin.include_tasks:
-    file: "update-{{ ansible_distribution }}.yml"
+    file: "update.yml"
     apply:
       tags:
         - upgrade
