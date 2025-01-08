@@ -12,7 +12,7 @@
         msg: "This playbook is not compatible with the host's distribution."
       when: >
         (ansible_distribution != "Rocky" or ansible_distribution_major_version != "9") and
-        (ansible_distribution != "Ubuntu" or ansible_distribution_major_version != "22")
+        (ansible_distribution != "Ubuntu" or ansible_distribution_major_version != "24")
 
   tasks:
 
