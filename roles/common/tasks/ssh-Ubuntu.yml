@@ -1,0 +1,15 @@
+---
+
+# configure sshd options
+
+- name: Copy changed sshd config options file
+  become: true
+  ansible.builtin.copy:
+    src: files/sshd-options-file
+    dest: "/etc/ssh/sshd_config.d/99-local-sshd.conf"
+    owner: root
+    group: root
+    mode: '0600'
+  notify: restart ssh
+
+# EOF
