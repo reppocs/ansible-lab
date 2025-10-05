@@ -25,7 +25,7 @@
 
     - name: Include minecraft role
       ansible.builtin.include_role:
-        name: ansible_role_minecraft
+        name: ansible-role-minecraft
       when: "'minecraft' in group_names"
 
 # EOF
