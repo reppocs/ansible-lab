@@ -1,2 +1,2 @@
 # ansible-lab
-Ansible playbooks and roles I use for my home lab.
+The ansible situation I use for my home lab server/vm deployments.
