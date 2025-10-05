@@ -23,4 +23,9 @@
         - install
         - upgrade
 
+    - name: Include minecraft role
+      ansible.builtin.include_role:
+        name: minecraft
+      when: "'minecraft' in group_names"
+
 # EOF
