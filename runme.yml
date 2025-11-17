@@ -14,18 +14,13 @@
         (ansible_distribution != "Rocky" or ansible_distribution_major_version != "9") and
         (ansible_distribution != "Ubuntu" or ansible_distribution_major_version != "24")
 
-  tasks:
-
-    - name: Include common role
-      ansible.builtin.include_role:
-        name: common
+  roles:
+    - role: common
       tags:
         - install
         - upgrade
 
-    - name: Include minecraft role
-      ansible.builtin.include_role:
-        name: minecraft
+    - role: reppocs.minecraft
       when: "'minecraft' in group_names"
-
-# EOF
+      tags:
+        - minecraft

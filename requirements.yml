@@ -2,8 +2,5 @@
 
 roles:
 
-  - name: minecraft
-    src: https://github.com/reppocs/ansible-role-minecraft.git
-    version: main
-
-# EOF
+- src: https://github.com/reppocs/ansible-role-minecraft.git
+  name: reppocs.minecraft
