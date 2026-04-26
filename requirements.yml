@@ -1,5 +1,9 @@
 ---
 
+collections:
+  - name: ansible.posix
+  - name: community.general
+
 roles:
 
 - src: https://github.com/reppocs/ansible-role-minecraft.git

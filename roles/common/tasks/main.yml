@@ -33,7 +33,7 @@
 
 - name: Include ssh task
   ansible.builtin.include_tasks:
-    file: "ssh-{{ ansible_distribution }}.yml"
+    file: "ssh.yml"
     apply:
       tags:
         - install

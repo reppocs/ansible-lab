@@ -9,18 +9,10 @@
     state: reloaded
   listen: "reload firewalld"
 
-- name: Restart sshd
+- name: restart ssh
   become: true
   ansible.builtin.service:
-    name: sshd
+    name: "{{ ssh_service_name }}"
     state: restarted
-  listen: "restart sshd"
-
-- name: Restart ssh
-  become: true
-  ansible.builtin.service:
-    name: ssh
-    state: restarted
-  listen: "restart ssh"
 
 # EOF
