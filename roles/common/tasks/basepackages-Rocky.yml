@@ -15,7 +15,6 @@
           - bind-utils
           - bzip2
           - chrony
-          - cockpit-pcp
           - curl
           - dnf-automatic
           - htop
@@ -26,7 +25,6 @@
           - nfs-utils
           - policycoreutils
           - policycoreutils-python-utils
-          - rkhunter
           - rsync
           - rsyslog
           - screen
