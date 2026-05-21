@@ -11,8 +11,8 @@
       ansible.builtin.fail:
         msg: "This playbook is not compatible with the host's distribution."
       when: >
-        (ansible_distribution != "Rocky" or ansible_distribution_major_version != "10") and
-        (ansible_distribution != "Ubuntu" or ansible_distribution_major_version != "24")
+        (ansible_facts["distribution"] != "Rocky" or ansible_facts["distribution_major_version"] != "10") and
+        (ansible_facts["distribution"] != "Ubuntu" or ansible_facts["distribution_major_version"] != "24")
 
   roles:
     - role: common
