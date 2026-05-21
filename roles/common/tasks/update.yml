@@ -10,9 +10,8 @@
 - name: Upgrade all packages
   become: true
   ansible.builtin.apt:
-    name: "*"
-    state: latest
     update_cache: true
+    upgrade: yes
   when: ansible_facts["distribution"] == "Ubuntu"
 
 # EOF
