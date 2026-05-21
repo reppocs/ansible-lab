@@ -5,7 +5,7 @@
   ansible.builtin.dnf:
     name: "*"
     state: latest
-  when: ansible_distribution == "Rocky"
+  when: ansible_facts["distribution"] == "Rocky"
 
 - name: Upgrade all packages
   become: true
@@ -13,6 +13,6 @@
     name: "*"
     state: latest
     update_cache: true
-  when: ansible_distribution == "Ubuntu"
+  when: ansible_facts["distribution"] == "Ubuntu"
 
 # EOF
