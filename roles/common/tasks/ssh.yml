@@ -6,7 +6,7 @@
   become: true
   ansible.builtin.copy:
     src: files/sshd-options-file
-    dest: "/etc/ssh/sshd_config.d/99-local-sshd.conf"
+    dest: "/etc/ssh/sshd_config.d/00-local-sshd.conf"
     owner: root
     group: root
     mode: '0600'
