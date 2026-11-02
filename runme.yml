@@ -13,14 +13,11 @@
       when: >
         (ansible_facts["distribution"] != "Rocky" or ansible_facts["distribution_major_version"] != "10") and
         (ansible_facts["distribution"] != "Ubuntu" or ansible_facts["distribution_major_version"] != "24")
+      tags: always
 
   roles:
     - role: common
-      tags:
-        - install
-        - upgrade
 
     - role: reppocs.minecraft
       when: "'minecraft' in group_names"
-      tags:
-        - minecraft
+      tags: minecraft
