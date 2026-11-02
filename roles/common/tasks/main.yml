@@ -21,16 +21,6 @@
   tags:
     - install
 
-#- name: include selinux task
-#  ansible.builtin.include_tasks:
-#    file: "selinux.yml"
-#    apply:
-#      tags:
-#        - install
-#  tags:
-#    - install
-#  when: ansible_distribution == "Rocky"
-
 - name: Include ssh task
   ansible.builtin.include_tasks:
     file: "ssh.yml"
