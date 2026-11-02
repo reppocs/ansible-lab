@@ -14,7 +14,7 @@
 
 - name: Include install base packages task
   ansible.builtin.include_tasks:
-    file: "basepackages-{{ ansible_distribution }}.yml"
+    file: "basepackages-{{ ansible_facts['distribution'] }}.yml"
     apply:
       tags:
         - install
@@ -42,7 +42,7 @@
 
 - name: Include firewall task
   ansible.builtin.include_tasks:
-    file: "firewall-{{ ansible_distribution }}.yml"
+    file: "firewall-{{ ansible_facts['distribution'] }}.yml"
     apply:
       tags:
         - install
